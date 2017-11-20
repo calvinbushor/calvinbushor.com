@@ -1,0 +1,12 @@
+.boxShadow(@params) {
+	-moz-box-shadow: @params;
+	-webkit-box-shadow: @params;
+	-o-box-shadow: @params;
+	box-shadow: @params;
+}
+
+.footer {
+	background-color: #333;
+	overflow: hidden;
+	.boxShadow(0 0 10px 4px #BC8B2C);
+}

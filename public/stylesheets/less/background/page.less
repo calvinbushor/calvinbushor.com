@@ -1,0 +1,52 @@
+.boxShadow(@params) {
+	-moz-box-shadow: @params;
+	-webkit-box-shadow: @params;
+	-o-box-shadow: @params;
+	box-shadow: @params;
+}
+
+.page {
+	background-color: #fefefe;
+	display: block;
+	overflow: hidden;
+	padding-top: 2em;
+	width: 96%;
+	margin: 0 2% 3%;
+	.boxShadow(0 0 15px 4px rgba(0, 0, 0, 0.5));
+}
+
+.m1 {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.first {
+	border-left: 4px solid #BC8B2C;
+	padding-left: 1em;
+}
+
+.second {
+	border-right: 4px solid #66393e;
+	padding-right: 1em;
+}
+
+@media only screen and (min-width: 500px) {
+	.page {
+		width: 90%;
+		margin: 0 5% 3%;
+	}
+}
+
+/*@media only screen and (min-width: 1200px) {
+	.page {
+		width: 1024px;
+		margin: 0 auto 3%;
+	}
+}*/
+
+@media only screen and (min-width: 1200px) {
+	.m1 {
+		width: 1024px;
+		margin: 0 auto 3%;
+	}
+}

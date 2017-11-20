@@ -1,0 +1,741 @@
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0pr2
+*/
+/* reset */
+html {
+  color: #000;
+  background: #FFF;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+caption, th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+input, textarea, select {
+  *font-size: 100%;
+}
+legend {
+  color: #000;
+}
+/* fonts */
+body {
+  font: 13px/1.231 arial, helvetica, clean, sans-serif;
+  *font-size: small;
+  *font: x-small;
+}
+select,
+input,
+button,
+textarea {
+  font: 99% arial, helvetica, clean, sans-serif;
+}
+table {
+  font-size: inherit;
+  font: 100%;
+}
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: monospace;
+  *font-size: 108%;
+  line-height: 100%;
+}
+.line, .lastUnit {
+  overflow: hidden;
+  *overflow: visible;
+  *zoom: 1;
+}
+.unit {
+  float: left;
+}
+.unitRight {
+  float: right;
+}
+.size1of1 {
+  float: none;
+}
+.size1of2 {
+  width: 50%;
+}
+.size1of3 {
+  width: 33.33333%;
+}
+.size2of3 {
+  width: 66.66666%;
+}
+.size1of4 {
+  width: 25%;
+}
+.size3of4 {
+  width: 75%;
+}
+.size1of5 {
+  width: 20%;
+}
+.size2of5 {
+  width: 40%;
+}
+.size3of5 {
+  width: 60%;
+}
+.size4of5 {
+  width: 80%;
+}
+.lastUnit {
+  float: none;
+  width: auto;
+  _position: relative;
+  _left: -3px;
+  _margin-right: -3px;
+}
+.full.unit {
+  float: none;
+}
+.full.size1of2 {
+  width: 100%;
+}
+.full.size1of3 {
+  width: 100%;
+}
+.full.size2of3 {
+  width: 100%;
+}
+.full.size2of5 {
+  width: 100%;
+}
+.full.size3of5 {
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  .full.unit {
+    float: left;
+  }
+  .full.size1of2 {
+    width: 50%;
+  }
+  .full.size1of3 {
+    width: 33.33333%;
+  }
+  .full.size2of3 {
+    width: 66.66666%;
+  }
+  .full.size2of5 {
+    width: 40%;
+  }
+  .full.size3of5 {
+    width: 60%;
+  }
+}
+/* ====== Headings ====== */
+/* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
+h1, .h1 {
+  font-size: 196%;
+  font-weight: normal;
+  font-style: normal;
+  color: #AE0345;
+}
+h2, .h2 {
+  font-size: 167%;
+  font-weight: normal;
+  font-style: normal;
+  color: #AE0345;
+}
+h3, .h3 {
+  font-size: 146.5%;
+  font-weight: normal;
+  font-style: normal;
+  color: #DF2B72;
+}
+h4, .h4 {
+  font-size: 123.1%;
+  font-weight: normal;
+  font-style: normal;
+  color: #333;
+}
+h5, .h5 {
+  font-size: 108%;
+  font-weight: bold;
+  font-style: normal;
+  color: #AE0345;
+}
+h6, .h6 {
+  font-size: 108%;
+  font-weight: normal;
+  font-style: italic;
+  color: #333;
+}
+/* if additional headings are needed they should be created via additional classes, never via location dependant styling */
+.category {
+  font-size: 108%;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #333;
+}
+.category a {
+  color: #333;
+}
+a, a:hover, a:visited {
+  color: #bf407a;
+}
+h1, .h1 {
+  color: #522f2c;
+}
+h2, .h2 {
+  color: #6a7826;
+}
+h3, .h3 {
+  color: #522f2c;
+}
+h4, .h4 {
+  color: #bc8b2c;
+}
+.footer p {
+  color: #aaaaaa;
+}
+.divider-top {
+  border-top: #bc8b2c 15px solid;
+}
+.plaid {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  background-color: #F1F1F1;
+  background-image: -webkit-repeating-linear-gradient(45deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0.5) 75px, rgba(106, 120, 38, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px), -webkit-repeating-linear-gradient(135deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px);
+  background-image: -moz-repeating-linear-gradient(45deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0.5) 75px, rgba(106, 120, 38, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px), -moz-repeating-linear-gradient(135deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px);
+  background-image: -o-repeating-linear-gradient(45deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0.5) 75px, rgba(106, 120, 38, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px), -o-repeating-linear-gradient(135deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px);
+  background-image: repeating-linear-gradient(45deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0) 75px, rgba(106, 120, 38, 0.5) 75px, rgba(106, 120, 38, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px), -webkit-repeating-linear-gradient(135deg, transparent 5px, rgba(82, 47, 44, 0.5) 5px, rgba(82, 47, 44, 0.5) 10px, rgba(131, 137, 145, 0) 10px, rgba(131, 137, 145, 0) 35px, rgba(131, 137, 145, 0.5) 35px, rgba(131, 137, 145, 0.5) 40px, rgba(106, 120, 38, 0.5) 48px, rgba(106, 120, 38, 0.5) 52px, rgba(106, 120, 38, 0) 55px, rgba(106, 120, 38, 0) 60px, rgba(82, 47, 44, 0.5) 40px, rgba(82, 47, 44, 0.5) 50px, rgba(82, 47, 44, 0) 50px, rgba(82, 47, 44, 0) 50px, rgba(131, 137, 145, 0.5) 60px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 70px, rgba(131, 137, 145, 0.5) 80px, rgba(29, 47, 69, 0) 80px, rgba(29, 47, 69, 0) 90px, rgba(131, 137, 145, 0.5) 90px, rgba(131, 137, 145, 0.5) 110px, rgba(131, 137, 145, 0) 110px, rgba(131, 137, 145, 0) 140px, rgba(131, 137, 145, 0.5) 140px, rgba(131, 137, 145, 0.5) 160px);
+}
+.header {
+  background-color: #222;
+  background-image: -webkit-linear-gradient(0, rgba(0, 0, 0, 0.5) 50%, transparent 50%), -webkit-linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+  background-image: -moz-linear-gradient(0, rgba(0, 0, 0, 0.5) 50%, transparent 50%), -moz-linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+  background-size: 20px 20px;
+  overflow: hidden;
+  position: relative;
+  min-height: 250px;
+}
+.logo {
+  width: 90%;
+  display: block;
+  position: relative;
+  z-index: 3;
+  margin: 15% 0 0 10%;
+}
+.logo a {
+  color: #FEFEFE;
+  display: block;
+  font-size: 1.8em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+.logo a span {
+  float: left;
+}
+.cbit {
+  display: block;
+  margin: 0 5px;
+  width: 1em;
+  position: relative;
+  top: -27px;
+}
+.portrait {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  margin: 2% auto;
+  display: block;
+}
+@media only screen and (min-width: 480px) {
+  .logo a {
+    font-size: 1.9em;
+  }
+  .logo {
+    margin: 15% 0 0 5%;
+  }
+  .portrait {
+    margin-right: 2%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  /*.logo {
+  		float: left;
+  		margin: 8% 0 4% 5%;
+  		width: 70%;
+  	}
+  	.portrait {
+  		float: right;
+  		margin: 3% 5% 0 0;
+  		width: 20%;
+  	}
+  	.logo a {
+  		font-size: 2.4em;
+  	}*/
+}
+@media only screen and (min-width: 700px) {
+  /*	.logo {
+  		float: left;
+  		margin: 8% 0 4% 5%;
+  		width: 64%;
+  	}
+  	.portrait {
+  		float: right;
+  		margin: 3% 8% 0 0;
+  		width: 20%;
+  	}
+  	.logo a {
+  		font-size: 2.6em;
+  	}*/
+  /*.logo a {
+  		font-size: 2.2em;
+  	}*/
+  .logo a {
+    font-size: 2em;
+  }
+}
+/*float: right;
+	margin: 3% 5% 0 0;*/
+@media only screen and (min-width: 1280px) {
+  .logo a {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  /*.logo a {
+  		font-size: 5em;
+  	}*/
+}
+.footer {
+  background-color: #333;
+  overflow: hidden;
+  -moz-box-shadow: 0 0 10px 4px #bc8b2c;
+  -webkit-box-shadow: 0 0 10px 4px #bc8b2c;
+  -o-box-shadow: 0 0 10px 4px #bc8b2c;
+  box-shadow: 0 0 10px 4px #bc8b2c;
+  -moz-box-shadow: 0 0 10px 4px #bc8b2c;
+  -webkit-box-shadow: 0 0 10px 4px #bc8b2c;
+  -o-box-shadow: 0 0 10px 4px #bc8b2c;
+  box-shadow: 0 0 10px 4px #bc8b2c;
+}
+.page {
+  background-color: #fefefe;
+  display: block;
+  overflow: hidden;
+  padding-top: 2em;
+  width: 96%;
+  margin: 0 2% 3%;
+  -moz-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+}
+.m1 {
+  width: 90%;
+  margin: 0 auto;
+}
+.first {
+  border-left: 4px solid #BC8B2C;
+  padding-left: 1em;
+}
+.second {
+  border-right: 4px solid #66393e;
+  padding-right: 1em;
+}
+@media only screen and (min-width: 500px) {
+  .page {
+    width: 90%;
+    margin: 0 5% 3%;
+  }
+}
+/*@media only screen and (min-width: 1200px) {
+	.page {
+		width: 1024px;
+		margin: 0 auto 3%;
+	}
+}*/
+@media only screen and (min-width: 1200px) {
+  .m1 {
+    width: 1024px;
+    margin: 0 auto 3%;
+  }
+}
+.secondary {
+  background-color: #E6EFC2;
+}
+.city {
+  background: transparent url('../../images/city.png') repeat-x left bottom;
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  z-index: 1;
+  height: 200px;
+  width: 100%;
+}
+/**
+ * Spacing classes
+ * Should be used to modify the default spacing between objects (not between nodes of the same object)
+ * Please use judiciously. You want to be using defaults most of the time, these are exceptions!
+ * <type><location><size>
+ */
+/* ====== Default spacing ====== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+p,
+blockquote,
+.media {
+  margin: 2% 4%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  padding-bottom: 0px;
+}
+pre {
+  margin: 10px 0;
+}
+table h1,
+table h2,
+table h3,
+table h4,
+table h5,
+table h6,
+table p,
+table ul,
+table ol,
+table dl {
+  padding: 0;
+}
+/* spacing helpers
+p,m = padding,margin
+a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
+*/
+.ptn, .pvn, .pan {
+  padding-top: 0px !important;
+}
+.pts, .pvs, .pas {
+  padding-top: 5px !important;
+}
+.ptm, .pvm, .pam {
+  padding-top: 10px !important;
+}
+.ptl, .pvl, .pal {
+  padding-top: 20px !important;
+}
+.prn, .phn, .pan {
+  padding-right: 0px !important;
+}
+.prs, .phs, .pas {
+  padding-right: 5px !important;
+}
+.prm, .phm, .pam {
+  padding-right: 10px !important;
+}
+.prl, .phl, .pal {
+  padding-right: 20px !important;
+}
+.pbn, .pvn, .pan {
+  padding-bottom: 0px !important;
+}
+.pbs, .pvs, .pas {
+  padding-bottom: 5px !important;
+}
+.pbm, .pvm, .pam {
+  padding-bottom: 10px !important;
+}
+.pbl, .pvl, .pal {
+  padding-bottom: 20px !important;
+}
+.pln, .phn, .pan {
+  padding-left: 0px !important;
+}
+.pls, .phs, .pas {
+  padding-left: 5px !important;
+}
+.plm, .phm, .pam {
+  padding-left: 10px !important;
+}
+.pll, .phl, .pal {
+  padding-left: 20px !important;
+}
+.mtn, .mvn, .man {
+  margin-top: 0px !important;
+}
+.mts, .mvs, .mas {
+  margin-top: 5px !important;
+}
+.mtm, .mvm, .mam {
+  margin-top: 10px !important;
+}
+.mtl, .mvl, .mal {
+  margin-top: 20px !important;
+}
+.mrn, .mhn, .man {
+  margin-right: 0px !important;
+}
+.mrs, .mhs, .mas {
+  margin-right: 5px !important;
+}
+.mrm, .mhm, .mam {
+  margin-right: 10px !important;
+}
+.mrl, .mhl, .mal {
+  margin-right: 20px !important;
+}
+.mbn, .mvn, .man {
+  margin-bottom: 0px !important;
+}
+.mbs, .mvs, .mas {
+  margin-bottom: 5px !important;
+}
+.mbm, .mvm, .mam {
+  margin-bottom: 10px !important;
+}
+.mbl, .mvl, .mal {
+  margin-bottom: 20px !important;
+}
+.mln, .mhn, .man {
+  margin-left: 0px !important;
+}
+.mls, .mhs, .mas {
+  margin-left: 5px !important;
+}
+.mlm, .mhm, .mam {
+  margin-left: 10px !important;
+}
+.mll, .mhl, .mal {
+  margin-left: 20px !important;
+}
+/**
+ * Data Table
+ * Allows you to align various table cells so that the alignment class can be placed on either the table, table row, or table cell
+ * Cell takes precedence over table row and table
+ * Table row takes precedence over table
+ */
+.data {
+  position: relative;
+  zoom: 1;
+  vertical-align: top;
+  text-align: left;
+  /*border-right:solid 1px transparent;*/
+  /* border fixes a FF2 bug which causes the data table to overlay its borders*/
+}
+.data table {
+  width: 100%;
+  table-layout: fixed;
+}
+th, td {
+  /*vertical-align:top;*/
+}
+/* horizontal alignment */
+.txtC, table .txtC, table tr .txtC {
+  text-align: center;
+}
+.txtL, table .txtL, table tr .txtL {
+  text-align: left;
+}
+.txtR, table .txtR, table tr .txtR {
+  text-align: right;
+}
+/* vertical alignment */
+.txtT, table .txtT, table tr .txtT {
+  vertical-align: top;
+}
+.txtB, table .txtB, table tr .txtB {
+  vertical-align: bottom;
+}
+.txtM, table .txtM, table tr .txtM {
+  vertical-align: middle;
+}
+.data th, .data td {
+  padding: 3px 20px;
+}
+body {
+  font-size: 15px;
+  line-height: 1.4;
+}
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 1.9em;
+}
+h2 {
+  font-size: 1.8em;
+}
+h3 {
+  font-size: 1.6em;
+}
+h4 {
+  font-size: 1.4em;
+}
+p, .p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.hLink {
+  font-size: .8em;
+}
+figure {
+  margin: 0 0;
+  padding: 0 0;
+}
+figcaption {
+  font-style: italic;
+  margin: 10px 10px;
+  font-size: .8em;
+}
+.subheadline {
+  font-size: .8em;
+  font-style: italic;
+  color: #000;
+}
+.icon {
+  background-image: url('../../images/sprite.png');
+  background-position: 0 0;
+  display: block;
+}
+.icon.twitter {
+  height: 51px;
+  width: 51px;
+  background-position: 0 0;
+}
+.icon.tumblr {
+  height: 52px;
+  width: 52px;
+  background-position: 0 -54px;
+}
+.icon.medium {
+  height: 52px;
+  width: 52px;
+  background-position: 0 -217px;
+}
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+}
+.content.extFull {
+  width: 90%;
+  padding: 2% 5%;
+  max-width: 100%;
+}
+.specialBox {
+  background-color: #cede81;
+  border-top: 15px solid #6A7826;
+}
+.frame {
+  background-color: #000;
+  border: 15px solid #fff;
+  padding: 3%;
+}
+@media only screen and (min-width: 400px) {
+  body {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,21 @@
+a, a:hover, a:visited {
+  color: #bf407a;
+}
+h1, .h1 {
+  color: #522f2c;
+}
+h2, .h2 {
+  color: #6a7826;
+}
+h3, .h3 {
+  color: #522f2c;
+}
+h4, .h4 {
+  color: #bc8b2c;
+}
+.footer p {
+  color: #aaaaaa;
+}
+.divider-top {
+  border-top: #bc8b2c 15px solid;
+}
